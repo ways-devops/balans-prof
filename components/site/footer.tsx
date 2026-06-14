@@ -1,6 +1,7 @@
-import { Calculator, Globe2, Mail, MessageCircle, Phone, Send } from "lucide-react";
+import { Globe2, Mail, MessageCircle, Phone, Send } from "lucide-react";
 
 import { AboutDialog } from "@/components/site/about-dialog";
+import { BrandMark } from "@/components/site/brand-mark";
 import { company, documentLinks, navigation } from "@/lib/content";
 
 const socialLinks = [
@@ -17,12 +18,10 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 sm:py-16 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr_1fr] lg:px-8">
         <div>
           <a href="#top" className="flex items-center gap-3" aria-label="На главную">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-900 text-white shadow-soft">
-              <Calculator className="h-5 w-5" aria-hidden="true" />
-            </span>
+            <BrandMark />
             <span>
               <span className="block text-base font-bold text-slate-950">{company.name}</span>
-              <span className="text-sm text-slate-500">бухгалтерские услуги для бизнеса</span>
+              <span className="text-sm text-slate-500">Бухгалтерские услуги для ИП и ООО</span>
             </span>
           </a>
           <p className="mt-5 max-w-sm text-sm leading-7 text-slate-600">

@@ -1,7 +1,8 @@
-import { ArrowRight, Calculator, Phone } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { AboutDialog } from "@/components/site/about-dialog";
+import { BrandMark } from "@/components/site/brand-mark";
 import { company, navigation } from "@/lib/content";
 
 const getSectionHref = (href: string) => (href.startsWith("#") ? `/${href}` : href);
@@ -11,14 +12,14 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <a href="#top" className="flex min-w-0 items-center gap-3" aria-label="На главную">
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-brand-900 text-white shadow-soft">
-            <Calculator className="h-5 w-5" aria-hidden="true" />
-          </span>
+          <BrandMark />
           <span className="min-w-0">
             <span className="block text-base font-bold leading-tight tracking-tight text-slate-950">
               {company.name}
             </span>
-            <span className="hidden text-xs font-medium text-slate-500 sm:block">бухгалтерия для ИП и ООО</span>
+            <span className="hidden text-xs font-medium text-slate-500 sm:block">
+              Бухгалтерские услуги для ИП и ООО
+            </span>
           </span>
         </a>
 
