@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Баланс Проф" }],
   creator: "Баланс Проф",
   publisher: "Баланс Проф",
+  icons: {
+    icon: "/favicon.ico",
+  },
   alternates: {
     canonical: "/",
   },
