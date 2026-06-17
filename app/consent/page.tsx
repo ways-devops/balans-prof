@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-
 import { LegalDocument } from "@/components/site/legal-document";
 import { legalInfo } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Согласие на обработку персональных данных",
+export const metadata = createPageMetadata({
+  title: "Согласие на обработку персональных данных — Nova Consulting",
   description: "Согласие пользователя на обработку персональных данных при отправке заявки на сайте.",
-};
+  path: "/consent",
+});
 
 export default function ConsentPage() {
   return (

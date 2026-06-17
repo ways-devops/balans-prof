@@ -1,8 +1,8 @@
 import { Globe2, Mail, MessageCircle, Phone, Send } from "lucide-react";
+import Link from "next/link";
 
-import { AboutDialog } from "@/components/site/about-dialog";
 import { BrandMark } from "@/components/site/brand-mark";
-import { company, documentLinks, navigation } from "@/lib/content";
+import { company, documentLinks } from "@/lib/content";
 
 const socialLinks = [
   { label: "Telegram", href: company.telegram, icon: Send },
@@ -10,51 +10,47 @@ const socialLinks = [
   { label: "Email", href: company.emailHref, icon: Mail },
 ];
 
-const getSectionHref = (href: string) => (href.startsWith("#") ? `/${href}` : href);
+const footerServices = ["Бухгалтерское сопровождение", "Налоговые консультации", "Регистрация ИП и ООО"];
+const footerCompany = [
+  { label: "О нас", href: "/about" },
+  { label: "Контакты", href: "/contacts" },
+];
 
 export function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 sm:py-16 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr_1fr] lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 sm:py-16 md:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_0.8fr_1fr] lg:px-8">
         <div>
-          <a href="#top" className="flex items-center gap-3" aria-label="На главную">
+          <Link href="/#top" className="flex items-center gap-3" aria-label="На главную">
             <BrandMark />
             <span>
               <span className="block text-base font-bold text-slate-950">{company.name}</span>
               <span className="text-sm text-slate-500">Бухгалтерские услуги для ИП и ООО</span>
             </span>
-          </a>
+          </Link>
           <p className="mt-5 max-w-sm text-sm leading-7 text-slate-600">
             Профессиональное бухгалтерское и налоговое сопровождение ИП и ООО на всех системах налогообложения.
           </p>
         </div>
 
         <div>
-          <p className="text-sm font-semibold text-slate-950">Навигация</p>
-          <nav className="mt-4 grid gap-3 text-sm text-slate-600" aria-label="Навигация в footer">
-            {navigation.map((item) =>
-              item.href === "#about" ? (
-                <AboutDialog key={item.href}>
-                  <button type="button" className="w-fit text-left transition-colors hover:text-brand-900">
-                    {item.label}
-                  </button>
-                </AboutDialog>
-              ) : (
-                <a key={item.href} href={getSectionHref(item.href)} className="transition-colors hover:text-brand-900">
-                  {item.label}
-                </a>
-              ),
-            )}
+          <p className="text-sm font-semibold text-slate-950">Услуги</p>
+          <nav className="mt-4 grid gap-3 text-sm text-slate-600" aria-label="Услуги">
+            {footerServices.map((item) => (
+              <Link key={item} href="/services" className="transition-colors hover:text-brand-900">
+                {item}
+              </Link>
+            ))}
           </nav>
         </div>
 
         <div>
-          <p className="text-sm font-semibold text-slate-950">Документы</p>
+          <p className="text-sm font-semibold text-slate-950">Компания</p>
           <div className="mt-4 grid gap-3 text-sm text-slate-600">
-            {documentLinks.map((item) => (
-              <a key={item.href} href={item.href} className="transition-colors hover:text-brand-900">
+            {footerCompany.map((item) => (
+              <Link key={item.href} href={item.href} className="transition-colors hover:text-brand-900">
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -72,7 +68,7 @@ export function Footer() {
             </a>
             <p className="flex items-center gap-2 text-slate-600">
               <Globe2 className="h-4 w-4 text-brand-900" aria-hidden="true" />
-              Онлайн по всей России
+              Пн–Пт с 9:00 до 18:00
             </p>
           </div>
         </div>
@@ -82,7 +78,13 @@ export function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
           <div className="text-xs leading-6 text-slate-500">
             <p>© 2026 Все права защищены.</p>
-            <p>Информация на сайте не является публичной офертой.</p>
+            <div className="mt-2 flex flex-col gap-2 sm:flex-row sm:gap-4">
+              {documentLinks.slice(0, 2).map((item) => (
+                <Link key={item.href} href={item.href} className="transition-colors hover:text-brand-900">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
           </div>
           <div className="flex items-center gap-2">
             {socialLinks.map((item) => (

@@ -1,7 +1,6 @@
 "use client";
 
 import { ChangeEvent, FormEvent, KeyboardEvent, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle2, Loader2, Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -359,31 +358,23 @@ export function LeadForm() {
         )}
       </Button>
 
-      <AnimatePresence>
-        {state === "success" ? (
-          <motion.div
-            className="mt-5 flex gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm font-medium text-emerald-900"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            role="status"
-          >
-            <CheckCircle2 className="h-5 w-5 shrink-0" aria-hidden="true" />
-            {statusMessage || successMessage}
-          </motion.div>
-        ) : null}
-        {state === "error" ? (
-          <motion.div
-            className="mt-5 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm font-medium text-red-900"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            role="alert"
-          >
-            {statusMessage || errorMessage}
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+      {state === "success" ? (
+        <div
+          className="mt-5 flex gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm font-medium text-emerald-900"
+          role="status"
+        >
+          <CheckCircle2 className="h-5 w-5 shrink-0" aria-hidden="true" />
+          {statusMessage || successMessage}
+        </div>
+      ) : null}
+      {state === "error" ? (
+        <div
+          className="mt-5 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm font-medium text-red-900"
+          role="alert"
+        >
+          {statusMessage || errorMessage}
+        </div>
+      ) : null}
     </form>
   );
 }

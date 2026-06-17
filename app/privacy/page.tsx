@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-
 import { LegalDocument } from "@/components/site/legal-document";
 import { legalInfo } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Политика обработки персональных данных",
+export const metadata = createPageMetadata({
+  title: "Политика обработки персональных данных — Nova Consulting",
   description: "Политика обработки и защиты персональных данных пользователей сайта бухгалтерских услуг.",
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

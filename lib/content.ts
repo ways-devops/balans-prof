@@ -1,9 +1,9 @@
 export const company = {
-  name: "Баланс Проф",
-  phone: "+7 993 351-07-33",
-  phoneHref: "tel:+79933510733",
-  email: "balans-prof@inbox.ru",
-  emailHref: "mailto:balans-prof@inbox.ru",
+  name: "Nova Consulting",
+  phone: "+7 959 194-39-12",
+  phoneHref: "tel:+79591943912",
+  email: "nova_consalting@mail.ru",
+  emailHref: "mailto:nova_consalting@mail.ru",
   telegram: "https://t.me/balans_prof",
   whatsapp: "https://wa.me/message/LKW55GLQFKHQD1",
 };
@@ -12,8 +12,10 @@ export const legalInfo = {
   owner: "ИП Лобанов Евгений Михайлович",
   inn: "504234365833",
   ogrnip: "326508100293722",
-  phone: "+7 993 351-07-33",
-  email: "balans-prof@inbox.ru",
+  phone: "+7 959 194-39-12",
+  phoneHref: "tel:+79591943912",
+  email: "nova_consalting@mail.ru",
+  emailHref: "mailto:nova_consalting@mail.ru",
 };
 
 export const documentLinks = [
@@ -23,11 +25,10 @@ export const documentLinks = [
 ];
 
 export const navigation = [
-  { label: "Услуги", href: "#services" },
-  { label: "Системы налогообложения", href: "#tax-systems" },
-  { label: "Преимущества", href: "#benefits" },
-  { label: "О компании", href: "#about" },
-  { label: "Контакты", href: "#contacts" },
+  { label: "Главная", href: "#top" },
+  { label: "Услуги", href: "/services" },
+  { label: "О нас", href: "/about" },
+  { label: "Контакты", href: "/contacts" },
 ];
 
 export const taxSystems = [
@@ -55,34 +56,24 @@ export const taxSystems = [
 
 export const benefits = [
   {
-    title: "Более 10 лет опыта",
-    text: "Знаем требования налоговой, банков и фондов, работаем с разными сферами бизнеса.",
+    title: "Экономим ваше время",
+    text: "Берем на себя бухгалтерские процессы, чтобы вы занимались развитием бизнеса.",
     icon: "briefcase",
   },
   {
-    title: "Без ошибок и штрафов",
-    text: "Контролируем сроки, сверяем начисления и заранее предупреждаем о рисках.",
+    title: "Следим за налогами и сроками",
+    text: "Контролируем отчетность и платежи, снижая риск штрафов и ошибок.",
     icon: "shield",
   },
   {
-    title: "Работаем онлайн по всей России",
-    text: "Документы, консультации и отчетность ведем дистанционно через удобные сервисы.",
-    icon: "globe",
-  },
-  {
-    title: "Прозрачные цены",
-    text: "Стоимость зависит от объема операций, сотрудников и выбранного формата работы.",
-    icon: "wallet",
-  },
-  {
-    title: "Персональный бухгалтер",
-    text: "У клиента есть ответственный специалист, который знает специфику бизнеса.",
-    icon: "user",
-  },
-  {
-    title: "Быстрая обратная связь",
-    text: "Отвечаем по делу, помогаем принимать решения и не оставляем вопросы без внимания.",
+    title: "Объясняем сложные вопросы простым языком",
+    text: "Помогаем принимать решения без перегруза терминами и бухгалтерской рутины.",
     icon: "message",
+  },
+  {
+    title: "Растём вместе с вашим бизнесом",
+    text: "Адаптируем сопровождение под новые направления, сотрудников и обороты.",
+    icon: "globe",
   },
 ];
 
@@ -114,7 +105,8 @@ export const services = [
 ];
 
 export const stats = [
-  { value: "500+", label: "клиентов на сопровождении и консультациях" },
-  { value: "10+", label: "лет практического бухгалтерского опыта" },
-  { value: "98%", label: "клиентов рекомендуют нас партнерам" },
+  { value: "150+", label: "клиентов" },
+  { value: "10+ лет", label: "практики специалистов" },
+  { value: "99,8%", label: "отчетности вовремя" },
+  { value: "0 ₽", label: "штрафов у клиентов" },
 ];

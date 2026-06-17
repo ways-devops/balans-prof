@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-
 import { LegalDocument } from "@/components/site/legal-document";
 import { legalInfo } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Пользовательское соглашение",
+export const metadata = createPageMetadata({
+  title: "Пользовательское соглашение — Nova Consulting",
   description: "Условия использования сайта бухгалтерских услуг и порядок отправки заявок.",
-};
+  path: "/agreement",
+});
 
 export default function AgreementPage() {
   return (
@@ -106,7 +106,7 @@ export default function AgreementPage() {
             inn: legalInfo.inn,
             ogrnip: legalInfo.ogrnip,
             phone: legalInfo.phone,
-            phoneHref: "tel:+79933510733",
+            phoneHref: legalInfo.phoneHref,
             email: legalInfo.email,
             emailHref: `mailto:${legalInfo.email}`,
           },

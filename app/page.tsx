@@ -7,6 +7,13 @@ import { HeroSection } from "@/components/site/hero-section";
 import { LeadSection } from "@/components/site/lead-section";
 import { ServicesSection } from "@/components/site/services-section";
 import { TaxSystemsSection } from "@/components/site/tax-systems-section";
+import { createPageMetadata, homeDescription, homeTitle } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: homeTitle,
+  description: homeDescription,
+  path: "/",
+});
 
 export default function Home() {
   return (

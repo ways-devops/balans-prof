@@ -16,20 +16,22 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         brand: {
-          50: "#F3F7FC",
-          100: "#E8EEF7",
-          500: "#315C9E",
-          700: "#183B75",
-          900: "#0F2B5B",
+          50: "#F8FAFC",
+          100: "#EEF2F7",
+          500: "#D4A24C",
+          700: "#A87622",
+          900: "#0F172A",
         },
+        gold: "#D4A24C",
       },
       borderRadius: {
         xl: "16px",
-        "2xl": "16px",
+        "2xl": "20px",
+        "3xl": "24px",
       },
       boxShadow: {
-        soft: "0 18px 48px rgba(15, 43, 91, 0.08)",
-        card: "0 12px 36px rgba(15, 43, 91, 0.07)",
+        soft: "0 24px 70px rgba(15, 23, 42, 0.10)",
+        card: "0 14px 40px rgba(15, 23, 42, 0.07)",
       },
       keyframes: {
         "dialog-overlay-show": {
